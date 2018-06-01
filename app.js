@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const mysqlcrud = require('./routes/mysqlcrud');
-const mongocrud = require('./routes/mongocrud');
+const mongocrud = require('./routes/mongodb');
 
 const app = express();
 const port = 5000;
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/mysqlcrud', mysqlcrud);
-app.use('/mongocrud', mongocrud);
+app.use('/mongocrud', mongodb);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
